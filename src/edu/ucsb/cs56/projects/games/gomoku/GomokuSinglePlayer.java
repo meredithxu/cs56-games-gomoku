@@ -193,7 +193,7 @@ public class GomokuSinglePlayer extends JPanel implements MouseListener, MouseMo
 	}
 
 	/**
-	 * the method to set the color of each grid 
+	 * the method to set the color of each grid
 	 */
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
@@ -302,20 +302,20 @@ public class GomokuSinglePlayer extends JPanel implements MouseListener, MouseMo
 	}
 
 	public void computerMove() {
-	    int win = CheckWins.checkForWin(grid, playStandard);
+		int win = CheckWins.checkForWin(grid, playStandard);
 		if (win != 1) {
-		int x = (int) (Math.random() * boardSize.x);
-		int y = (int) (Math.random() * boardSize.y);
-		boolean empty = true;
-		while (empty) {
-			if (grid[x][y] != 1 && grid[x][y] != 2) {
-				setGrid(x, y, 2);
-				empty = false;
-			} else {
-				x = (int) (Math.random() * boardSize.x);
-				y = (int) (Math.random() * boardSize.y);
+			int x = (int) (Math.random() * boardSize.x);
+			int y = (int) (Math.random() * boardSize.y);
+			boolean empty = true;
+			while (empty) {
+				if (grid[x][y] != 1 && grid[x][y] != 2) {
+					setGrid(x, y, 2);
+					empty = false;
+				} else {
+					x = (int) (Math.random() * boardSize.x);
+					y = (int) (Math.random() * boardSize.y);
+				}
 			}
-		}
 		}
 	}
 
